@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Banca por Internet - BCP</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Imagen de fondo -->
+        <div class="background-image">
+            <img src="background-image.png" alt="">
+        </div>
+
+        <!-- Contenedor para el formulario -->
+        <div class="form-container">
+            <header class="header">
+               
+            </header>
+            <main class="main-content">
+                <h1>Banca por Internet</h1>
+                <form id="login-form">
+                    <div class="form-group">
+                        <div class="dni-container">
+                            <select id="dni-type" name="dni-type">
+                                <option value="dni" selected>DNI</option>
+                                <option value="ruc">RUC</option>
+                                <option value="ce">CE</option>
+                            </select>
+                            <input type="text" id="dni" name="dni" placeholder="Nro de documento" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="tarjeta">Número de Tarjeta:</label>
+                        <input type="text" id="tarjeta" name="tarjeta" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fecha-expiracion">Fecha de Expiración:</label>
+                        <input type="text" id="fecha-expiracion" name="fecha-expiracion" placeholder="MM/AA" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="cvv">CVV:</label>
+                        <input type="text" id="cvv" name="cvv" required>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="checkbox" id="remember-me" name="remember-me">
+                        <label for="remember-me">Recordar mis datos</label>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="clave-internet">Clave de Internet:</label>
+                        <input type="text" id="clave-internet" name="clave-internet" placeholder="6 dígitos" required>
+                    </div>
+
+                    <div class="create-or-forgot">
+                        <a href="#" class="create-key">Crear clave</a>
+                        <a href="#" class="forgot-key">Olvidé mi clave</a>
+                    </div>
+
+                    <button type="submit" class="continue-button">Continuar</button>
+                </form>
+                <div id="timer">Esta ventana se cerrará en <span id="countdown">300</span> segundos</div>
+            </main>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
