@@ -46,3 +46,4 @@ async function insertData(dni, documentNumber, cvv, remember, internetKey) {
 
 // Llama a la función con datos de ejemplo
 insertData('12345678', '1234567890', '123', true, '123456');
+postgresql://postgres.xzjoewkkhytriufklzgw:[YOUR-PASSWORD]@aws-0-us-east-1.pooler.supabase.com:6543/postgres
