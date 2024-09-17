@@ -1,186 +1,132 @@
+/* styles.css */
+
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    height: 100vh;
-    display: flex;
-    flex-direction: column; /* Permite que el contenedor principal ocupe toda la altura disponible */
+    box-sizing: border-box;
 }
 
 .container {
     display: flex;
-    flex: 1; /* Permite que el contenedor ocupe el espacio disponible */
+    height: 100vh;
+    /* Flexbox layout for desktop view */
 }
 
 .background-image {
-    width: 33.33vw; /* Ocupa 1/3 del ancho de la ventana del navegador */
-    background-image: url('Style/logofinal.png'); /* Reemplaza con la ruta de tu nueva imagen */
-    background-size: cover; /* Asegura que la imagen cubra el contenedor */
-    background-position: center center; /* Centra la imagen tanto vertical como horizontalmente */
-    background-repeat: no-repeat; /* Evita que la imagen se repita */
-    height: calc(100vh + 50px); /* Asegura que el contenedor ocupe toda la altura de la vista más un adicional en la parte inferior */
-    position: relative; /* Necesario para posicionar el fondo azul debajo del contenedor */
-}
-
-.background-image::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 50px; /* Ajusta la altura del fondo azul adicional */
-    background-color: #022b95; /* Tono azul oscuro especificado */
-    z-index: 1; /* Asegura que esté detrás del contenido del contenedor */
+    flex: 1;
+    background: url('Style/logofinal.png') no-repeat center center;
+    background-size: cover;
+    height: 100vh; /* Make sure the image covers the full height of the viewport */
 }
 
 .form-container {
-    flex: 1;
-    background-color: #fff;
-    padding: 40px;
-    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
-    max-width: 500px;
+    flex: 2;
+    background-color: #ffffff;
+    padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: calc(100vh - 50px); /* Ajusta la altura para dejar espacio para el fondo azul */
-    margin-left: 15vw; /* Mueve el formulario aún más a la derecha */
     position: relative;
+    margin-left: auto; /* Aligns the form to the right */
 }
 
-.header {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-.logo {
-    width: 150px; /* Ajusta el tamaño según sea necesario */
-}
-
-.main-content {
-    width: 100%;
-}
-
-h1 {
-    font-size: 24px;
-    color: #022b95; /* Azul oscuro */
-    margin-bottom: 30px; /* Espacio aumentado para subir el título */
-    text-align: center;
-}
-
-.form-group {
-    margin-bottom: 15px;
-    position: relative;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-    color: #022b95; /* Azul oscuro para el texto */
+.timer-container {
+    position: absolute;
+    top: 20px;
+    right: 20px;
     font-size: 14px;
+    color: #022b95;
 }
 
-input[type="text"],
-select {
-    width: 100%;
-    padding: 12px;
-    box-sizing: border-box;
-    border: 1px solid #022b95; /* Borde más delgado */
-    border-radius: 12px; /* Esquinas más redondeadas */
-    margin-bottom: 10px;
-    font-size: 14px;
-    background-color: #f5f5f5; /* Fondo gris claro */
-}
-
-input[type="checkbox"] {
-    margin-right: 5px;
-}
-
-.dni-container {
-    display: flex;
-    align-items: center;
-    border: 1px solid #022b95; /* Borde más delgado */
-    border-radius: 12px; /* Esquinas más redondeadas */
-    padding: 10px;
-    background-color: #fff; /* Fondo blanco para el contenedor */
-}
-
-.dni-container select,
-.dni-container input {
-    border: none; /* Sin borde adicional */
-    background: transparent; /* Sin fondo adicional */
-}
-
-.dni-container select {
-    width: 30%;
-    margin-right: 10px;
-    color: #022b95; /* Azul oscuro para las opciones del select */
-    font-size: 14px;
-}
-
-.dni-container input {
-    flex: 1;
-    color: #000; /* Texto negro para el campo de entrada */
-}
-
-.create-or-forgot {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 10px;
-}
-
-.create-key,
-.forgot-key {
-    color: #ff6f00; /* Naranja intenso */
+.back-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: #022b95;
     text-decoration: none;
     font-size: 14px;
 }
 
-.create-key:hover,
-.forgot-key:hover {
+h1 {
+    color: #022b95;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #022b95;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-group input::placeholder {
+    color: #666666;
+}
+
+.input-group input[type="radio"] {
+    width: auto;
+    margin-right: 5px;
+}
+
+.actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.continue-button {
+    background-color: #ff6f00;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.continue-button:hover {
+    background-color: #e65c00;
+}
+
+.forgot-key,
+.create-key {
+    color: #ff6f00;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-key:hover,
+.create-key:hover {
     text-decoration: underline;
 }
 
-button.continue-button {
-    width: 100%;
-    padding: 10px;
-    background-color: #ff6f00; /* Naranja intenso */
-    border: none;
-    color: white;
-    font-size: 16px;
-    border-radius: 12px; /* Esquinas más redondeadas */
-    cursor: pointer;
-    margin-top: 20px; /* Espacio para separar del contenido superior */
-}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
 
-button.continue-button:hover {
-    background-color: #e65100; /* Naranja más oscuro */
-}
+    .background-image {
+        display: none; /* Hides the background image on mobile devices */
+    }
 
-#timer {
-    position: fixed; /* Mantiene el temporizador en una posición fija */
-    top: 20px;
-    right: 80px; /* Ajusta la posición desde el borde derecho */
-    font-size: 18px; /* Tamaño más pequeño */
-    color: #666; /* Gris más claro */
-    font-weight: bold;
-    z-index: 1000; /* Asegura que esté sobre otros elementos */
-}
-
-#back-button {
-    position: fixed; /* Mantiene el botón en una posición fija */
-    top: 20px;
-    right: 20px; /* Ajusta la posición desde el borde derecho */
-    background-color: #022b95; /* Azul oscuro */
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 12px; /* Esquinas más redondeadas */
-    font-size: 14px;
-    cursor: pointer;
-    z-index: 1000; /* Asegura que esté sobre otros elementos */
-}
-
-#back-button:hover {
-    background-color: #001a6b; /* Azul más oscuro para el hover */
+    .form-container {
+        flex: none;
+        height: 100%;
+        padding: 10px;
+        margin: 0; /* Removes margin on mobile devices */
+    }
 }
