@@ -73,3 +73,30 @@
     <script src="scripts.js"></script>
 </body>
 </html>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const countdownElement = document.getElementById('countdown');
+        let timeLeft = 300; // Tiempo en segundos
+
+        function updateCountdown() {
+            if (timeLeft <= 0) {
+                countdownElement.textContent = '0';
+                return;
+            }
+
+            // Calcula los minutos y segundos restantes
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            
+            // Formatea los minutos y segundos para que siempre tengan dos dígitos
+            countdownElement.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            
+            timeLeft--;
+            
+            // Llama a updateCountdown nuevamente después de 1 segundo
+            setTimeout(updateCountdown, 1000);
+        }
+
+        updateCountdown(); // Inicia el temporizador
+    });
+</script>
