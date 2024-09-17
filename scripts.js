@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
         alert('Error: Intente más tarde.');
     });
 });
-// Importa la librería Supabase
+npm install @supabase/supabase-js
 import { createClient } from '@supabase/supabase-js';
 
 // Obtén las variables de entorno desde el entorno de ejecución
